@@ -16,8 +16,10 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <NewPostForm onNewPost={handleNewPost} />
-      <PostList posts={posts} />
+      <div>
+        <NewPostForm onNewPost={handleNewPost} />
+        <PostList posts={posts} />
+      </div>
     </div>
   );
 }

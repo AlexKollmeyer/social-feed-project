@@ -1,32 +1,37 @@
 import React, { useState } from "react";
 import "./Post.css";
 
-const Post = ({ Post }) => {
+const Post = ({ post }) => {
   const [isLiked, setIsLiked] = useState(false);
 
-  const [isDisliked, setIsDisLiked] = useState(false);
+  const [isDisLiked, setIsDisLiked] = useState(false);
 
   const handleLike = (e) => {
     setIsLiked(!isLiked);
-    if (isDisliked == true) {
-      setIsDisLiked(!isDisliked);
+    if (isDisLiked === true) {
+      setIsDisLiked(!isDisLiked);
     }
   };
 
   const handleDislike = (e) => {
-    setIsDisLiked(!isDisliked);
-    if (isLiked == true) {
+    setIsDisLiked(!isDisLiked);
+    if (isLiked === true) {
       setIsLiked(!isLiked);
     }
   };
-
+  const likeBtnClass = isLiked ? "like-btn" : "";
+  const disLikeBtnClass = isDisLiked ? "dislike-btn" : "";
   return (
-    Post && (
+    post && (
       <div>
-        <h4>{Post.userName}</h4>
-        <p>{Post.postContent}</p>
-        <button>Like</button>
-        <button>Dislike</button>
+        <h4>{post.userName}</h4>
+        <p>{post.postContent}</p>
+        <button className={likeBtnClass} onClick={handleLike}>
+          Like
+        </button>
+        <button className={disLikeBtnClass} onClick={handleDislike}>
+          Dislike
+        </button>
       </div>
     )
   );

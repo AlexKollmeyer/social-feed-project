@@ -1,31 +1,12 @@
 import Post from "../Post/Post";
 const PostList = ({ posts = [] }) => {
-  const postItems = posts.map((post) => <Post key={post.userName} post />);
+  const postItems = posts.map((post) => (
+    <Post key={post.userName} post={post} />
+  ));
   return <div>{postItems}</div>;
 };
 
 export default PostList;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* import MovieItem from "../MovieItem/MovieItem";
     

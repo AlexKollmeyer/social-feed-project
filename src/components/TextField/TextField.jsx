@@ -1,6 +1,6 @@
 import "./TextField.css";
 
-const TextField = ([{ label, value, onChange }]) => {
+const TextField = ({ label, value, onChange }) => {
   return (
     <div>
       <label>{label}</label>

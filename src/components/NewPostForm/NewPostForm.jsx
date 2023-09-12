@@ -3,23 +3,23 @@ import TextField from "../TextField/TextField";
 
 const NewPostForm = ({ onNewPost }) => {
   const [userName, setUserName] = useState("");
-  const [postContet, setPostContent] = useState("");
+  const [postContent, setPostContent] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = {
       userName,
-      postContet,
+      postContent,
     };
     onNewPost(formData);
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="">
       <TextField label="UserName" value={userName} onChange={setUserName} />
       <TextField
         label="PostContent"
-        value={postContet}
+        value={postContent}
         onChange={setPostContent}
       />
       <button type="submit">Create</button>
